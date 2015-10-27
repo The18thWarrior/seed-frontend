@@ -1,0 +1,25 @@
+<script>
+    $('html').css("background-color", "#666666");
+    //$('#register-container-div').css("display", "block");
+        
+
+            
+    $('#login-div').css("display", "none");
+    $('#forgot-holder').css("display", "block");
+    
+</script>
+<div id="" class="">
+    <div id="forgot-div" class="register-form">
+        <div id="forgot-form">        
+            <img src="img/pixeltagLogo.png" style="margin-bottom:15px;">
+            <h2 class="resetHeaders">Password Reset</h2>
+            <form method="POST" role="form" class="formSections">
+                <p ng-show="forgotError" style="color:red;">Email Not Recognized</p>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="" placeholder="Email" ng-model="pxl_email" style="width:100%;margin-left:auto;margin-right:auto;">
+                </div>
+                <input type="submit" class="btn btn-primary" value="Submit" ng-click="resetPassword()" style="width:100%;margin-left:auto;margin-right:auto;display:block;">
+            </form>
+        </div>
+    </div>
+</div>

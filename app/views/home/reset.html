@@ -1,0 +1,23 @@
+<script>
+    $('html').css("background-color", "#666666");
+    $('#login-div').css("display", "none");
+    $('#forgot-holder').css("display", "block");
+</script>
+<div id="" class="">
+    <div id="reset-div">
+        <div id="forgot-form" class="register-form">
+            <img src="img/pixeltagLogo.png" style="margin-bottom:15px;">
+            <h2 class="resetHeaders">Enter New Password</h2>
+            <form method="POST" role="form" class="formSections" ng-submit="resetPassword()">
+                <p ng-show="resetError" style="color:red;text-align:center;margin:10px;">Error, please contact the administrator</p>
+                <p ng-show="passwordvalidator" style="color:red;text-align:center;margin:10px;">Passwords must match :)</p>
+                <p ng-show="passwordlength" style="color:red;text-align:center;margin:10px;">Passwords must be at least 5 characters</p>
+                <div class="form-group">
+                    <input type="password" class="form-control" id="" placeholder="Password" ng-model="pxl_pwd" style="width:100%;margin-left:auto;margin-right:auto;" required >
+                     <input type="password" class="form-control" id="" placeholder="Confirm Password" ng-model="pxl_pwdcheck" style="width:100%;margin-left:auto;margin-right:auto;margin-top:10px;" required>
+                </div>
+                <input type="submit" class="btn btn-primary" value="Reset Password" style="width:100%;margin-left:auto;margin-right:auto;margin-bottom:10px;display:block;" />
+            </form>
+        </div>
+    </div>
+</div>

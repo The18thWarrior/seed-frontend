@@ -1,0 +1,136 @@
+<!-- Help/FAQ -->
+<div class="row fadeIn " id="help-modal" data-spy="scroll" data-target="#help-navbar" style="position:relative;height:100%;overflow-y:scroll;font-family:Roboto;"> 
+    <div class="col-sm-12" style="margin-top:160px;">
+        <div class="col-sm-3" id="help-navbar" >
+            <ul class="nav nav-pills nav-stacked" style="position:fixed;">
+              <li role="presentation" class="active helppill" id="navinstall"><a data-target="#install" ng-click="scrollTo('install')"><span class="badge">1</span> Installation &amp; Registration</a></li>
+              <li role="presentation" class="helppill" id="navsitesetup"><a data-target="#sitesetup" ng-click="scrollTo('sitesetup')"><span class="badge">2</span> Site Setup</a></li>
+              <li role="presentation" class="helppill" id="navattribute"><a data-target="#attribute" ng-click="scrollTo('attribute')"><span class="badge">3</span> Attribution Campaign Setup</a></li>
+              <li role="presentation" class="helppill" id="navretarget"><a data-target="#retarget" ng-click="scrollTo('retarget')"><span class="badge">4</span> Retargeting Campaign Setup</a></li>
+              <li role="presentation" class="helppill" id="navsync"><a data-target="#sync" ng-click="scrollTo('sync')"><span class="badge">5</span> Data Sync</a></li>
+              <li role="presentation" class="helppill" id="navfaq"><a data-target="#faq" ng-click="scrollTo('faq')"><span class="badge">6</span> FAQ</a></li>
+            </ul>
+        </div>          
+        <div class="col-sm-7">
+            <div id="install" style="">                
+                <h4 class="helpHeader"><span style="background-color:#FAA21B;">1</span> Installation &amp; Registration</h4>
+                    <div class="col-sm-10 col-sm-offset-1">
+                    <p>To Register and Install PixelTag you will need one piece of information:<p>
+                    <ul>
+                        <li>Your Registration ID: <strong>{{id}}</strong></li>
+                        <li>Package Password: <strong>PixelTag2015</strong></li>
+                    </ul>
+
+                    <p>First time users of PixelTag will need to Install the Application into thier Saleforce.com Org by clicking here: </p>
+                    <div style="margin-bottom:10px;text-align:center;">
+                    <a href="https://login.salesforce.com/packaging/installPackage.apexp?p0=04t1a00000069XY" class="btn btn-primary" >INSTALL PACKAGE</a>
+                    </div>
+
+                    <p>Upon completion of installation, visit the PixelTag Welcome Page to complete the setup.</p>
+                </div>
+            </div>
+            <div id="sitesetup" style="">
+                <h4 class="helpHeader"><span style="background-color:#FA1B1B;">2</span> Site Setup</h4>
+                <div class="col-sm-10 col-sm-offset-1">
+                    <p>Please insert the following Javascript on all the domains that your campaigns link to.</p> 
+
+                    <p><strong>PixelTag Suggestion:</strong> add Javascript to the footer of your page.</p>
+                    <div class="well" style="color:darkgrey;">
+                        <pre>
+            &lt;script&gt;
+                var pixeltagId = &#39;{{id}}&#39;;
+            &lt;/script&gt;
+            &lt;script src=&quot;www.getpixeltag.com/js/pixeltag-main.js&quot;&gt;
+                        </pre>
+                    </div>
+                </div>
+            </div>
+            <div id="attribute" style="">
+                <h4 class="helpHeader"><span style="background-color:darkgray;">3</span> Attribution Campaign Setup</h4>
+                <div class="col-sm-10 col-sm-offset-1">
+                    <h4 style="font-weight:bold;">Tell me about campaigns!</h4>
+
+                    <p>To create an Attribution Campaign, click the New Campaign button on the dashboard page and select Attribution Campaign. Only a campaign name is needed.</p>
+
+                    <p><strong>To install the campaign: </strong>Note the Registration ID for the campaign. Simply add that ID as a query parameter <i>(p0c)</i> in your campaign clickthrough (i.e. Adroll Landing URL). An example format for the url is as follows: <code style="text-align:center;">www.getpixeltag.com?p0c=55c6aeabb25bb50300000001</code></p>
+                </div>
+            </div>
+            <div class="" id="retarget" style="text-align:none;font-family: 'Roboto', Arial, sans-serif;line-height: 25px;">
+                <h3 class="helpHeader"><span style="background-color:#12A579;">4</span> Retargeting Campaign Setup</h3>
+                <div class="col-sm-10 col-sm-offset-1">
+                    <h4 style="font-weight:bold;">Tell me about campaigns!</h4>
+
+                    <p>To create a Retargeting Campaign, click the New Campaign button on the dashboard page and select Retargeting Campaign. Enter a name, and valid landing page URL.</p>
+
+                    <p><strong>Note: </strong>The campaign will be pending initially as it takes up to 48 hours for campaign details to be synced with the Ad Networks. Click "Enable" to activate the campaign within Salesforce.com.</p>
+
+                    <p>To navigate to your campaigns, simply click "Campaigns" in the menu and select an existing campaign from the list.</p>
+                    <p>From here you can: </p>
+                    <ul style="list-style-type: circle;">
+                        <li>Edit the campaign name and Landing URL</li>
+                        <li>Adjust the associated creative assets</li>
+                        <li>Enable/Disable the Campaign</li>
+                    </ul>
+                     
+                    <hr />
+
+                    <h4 style="font-weight:bold;">Tell me about creatives!</h4>
+                    <p>Campaigns may be associated with multiple creative assets.  To upload a new creative, navigate to the menu bar and select “New Creative”.</p>
+                    <p>Your creative file size must be under 150k and in .PNG, .JPEG, or .GIF format.</p>                    
+                    <p>The dimensions of your creatives should fit one of the following:</p>
+                    <ul style="list-style-type: circle;">
+                        <li><b>Leader board Banner:</b> 728x90 pixels</li>
+                        <li><b>Medium Rectangle:</b> 300x250 pixels</li>
+                        <li><b>Skyscraper Banner:</b> 160x600 pixels</li>
+                    </ul>
+                     
+                    <p style="margin:0px;">Simple Guidelines:</p>
+                    <ul style="list-style-type: circle;">
+                        <li>All content must obey geographic laws for: Alcohol, Tobacco, Firearms, and Gambling.</li>
+                        <li>All content in reference to Religion, Politics, Dating, Sexual Health, and the Military must be positive and non-controversial.</li>
+                        <li>Images may not contain adult content, offensive language, or be misleading.</li>
+                    </ul>
+
+                    <hr />
+
+                    <h4 style="font-weight:bold;">A Note on Landing URLs!</h4>
+                    <p>Entering a valid Landing URL is important. Your landing URL must: </p>
+                    <ul style="list-style-type: circle;">
+                        <li>Clearly disclose the company or person responsible for the ad and landing page</li>
+                        <li>Not use any third parties’ brand, logo or design without the express, written permission of such party</li>
+                        <li>Contain relevant information pertaining to the good or service being promoted by the ad (and not some other good or service intended to bait-and-switch a consumer)</li>
+                    </ul>                    
+                </div>
+            </div>
+            <div id="sync" style="">
+                <h4 class="helpHeader"><span style="background-color:#1D5CA3;">5</span> Data Sync</h4>
+                <div class="col-sm-10 col-sm-offset-1">
+                    <p>
+                        In order to generate individual URL's for your leads/contacts, each record will need to be edited, as the update is dynamic. This can easily be accomplished by Mass Updating an empty checkbox on the Lead/Contact object. Your administrator should be able to assist with this need.
+                    </p>
+
+                    <hr />
+
+                    <h4 style="font-weight:bold;">But my Admin isn't available!!</h4>
+                    <p>
+                        Not to worry!! You can still deploy Retargeting Campaigns to your prospects using the pxl_switch__PixelTags__c field on either Leads or Contacts. Campaign conversions will still be recorded and can be reconciled later.
+                    </p>
+                </div>
+            </div>
+            <div id="faq">
+                <h4 class="helpHeader"><span style="background-color:#FA691B;">6</span> FAQ (Coming Soon&#8482;)</h4>
+                <div class="col-sm-10 col-sm-offset-1">
+                    <h4 style="font-weight:bold;" class="text-danger">When in doubt, hit F5!</h4>
+                    <p class="text-danger">We are still going through a few growing pains with our application....we're still in 'beta' (if you ask Brian). If you ever get any weird behavior, first try refreshing the page, that usually handles it. If you're still getting issues, reach out to <a href="mailto:support@getpixeltag.com">support@getpixeltag.com</a>. We will get back to you ASAP.</p>
+                    <hr />
+
+                    <div class="well">
+                        <h4 style="font-weight:bold;">Refund Policy</h4>
+                        <p>Considering that we bill the month after use, we do <b>not</b> provide refunds.</p>
+                        <p>There are no cancellation fees, however prorated periods will be billed at fractional cost (rounded to the nearest day).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+</div><!-- /.modal -->

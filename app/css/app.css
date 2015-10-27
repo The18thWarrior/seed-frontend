@@ -1,30 +1,308 @@
-/* app css stylesheet */
+@media (min-width:780px) {
+    html, body {
+        
+    }
+    #body-replacement {
+        background-color: #666666;
+        font-family: "Roboto", Arial, sans-serif;
+    }
+    #login-div, #forgot-div, #reset-, #register-container{
+        position: absolute;
+        background: rgba(255,255,255,0.9);
+        left: 40%; right: 0; top: 6em;
+        width: 350px;
+        box-shadow: 0 0 6px 0 rgba(0,0,0,0.5);
+        border-radius:15px;
+    }
 
-.menu {
-  list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
+    #login-div {
+        min-height: 500px;
+    }
+
+    #forgot-div, #reset-div{
+        min-height: 375px;
+    }
+
+    #register-container {
+        min-height:425px;
+    }
+
+    #login-div #login-form, #forgot-div #forgot-form, #reset-div #forgot-form, #register-container #register-form{
+        position: absolute;
+        top:0; bottom: 0; left: 0; right: 0;
+        margin: auto 0;
+        padding:0 30px;
+    }
+
+    #login-div #login-form, #forgot-div #forgot-form, #reset-div #forgot-form {
+        height: 70%;
+    }
+
+    #register-container #register-form {
+        height: 85%;
+    }
+
+
+    h2 {
+        font-family: "Raleway", Arial, sans-serif;
+        font-weight: 200;
+        font-size: 1.7em;
+        margin-bottom: 20px;
+        margin-top: 0;
+    }
+    input[type=submit] {
+        border-radius: 2px;
+        font-family: "Roboto", Arial, sans-serif;
+        font-size: 1.2em;
+        width: 100%;
+        height: 45px;
+        margin-top: 10px;
+        border: 1px solid, #1c78b1 (0.11,0.471,0.694);
+        background: #2e8ec9;
+        background: -moz-linear-gradient(bottom, #2789c7 0%, #3f9fd9 100%);
+        background: -webkit-gradient(linear, left bottom, left top, color-stop(0%,#2789c7), color-stop(100%,#3f9fd9));
+        background: -webkit-linear-gradient(bottom, #2789c7 0%,#3f9fd9 100%);
+        background: -o-linear-gradient(bottom, #2789c7 0%,#3f9fd9 100%);
+        background: -ms-linear-gradient(bottom, #2789c7 0%,#3f9fd9 100%);
+        background: linear-gradient(bottom, #2789c7 0%, #3f9fd9 100%) bottom (0.153,0.537,0.78) to top(0.247,0.624,0.851)filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f9fd9', endColorstr='#2789c7',GradientType=0 );
+    }
+    input[type=submit]:hover {
+        cursor: pointer;
+        box-shadow: inset 0px 2px 1px rgba(0,0,0,0.1);
+    }
+    .login-options, .post-login-options {
+        margin-top: 20px;
+        text-align:center;
+    }
+    .login-options {
+        font-size: 15px;
+    }
+    #register-container-div {
+        position: absolute;
+        left: 200px; right: 0;
+        top: 0; bottom: 0;
+        display:none;
+    }
+    #register-container-div #register-container {
+        position: absolute;
+        left: 0; right: 0; top: 6em;
+        width: 50%;
+        min-height: 400px;
+        margin: auto auto;
+        background: #fff;
+        box-shadow: 0 0 12px 0 rgba(0,0,0,0.8);
+    }
+    #register-container-div #register-container .register-form {
+        padding: 30px 25px;
+    }
+    form .form-group {
+        margin-bottom: 5px;
+        margin-top:5px;
+    }
+    input.form-control {
+        border-radius: 2px;
+        height: 50px;
+    }
+    #register-container-div #register-container .register-form input.form-control {
+        height: 40px;
+    }
+    .form-control-feedback {
+        height: 40px;
+        line-height: 40px;
+    }
+    #overlay {
+        position: absolute;
+        background: url(../img/loading.gif) no-repeat center center #000000;
+        top: 0; left: 0; right: 0; bottom: 0;
+        z-index: 9;
+        opacity: 0.5;
+    }
+
+    .resetSections {
+        position: absolute;
+        left: 0; right: 0; top: 6em;
+        width: 50%;
+        min-height: 200px;
+        margin: auto auto;
+        background: #fff;
+        box-shadow: 0 0 12px 0 rgba(0,0,0,0.8);
+    }
+
+    .formSections {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 15px;
+    }
+
+    .resetHeaders {
+        font-family: 'Raleway';
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 25px;
+    }
+
+    #insertInvoice .form-group .row {
+        margin:15px;
+    }
+
+    .avatarHeader {
+        max-height:48px;
+        padding:7px;
+    }
+
+    #createAccount {
+        width:100%;
+        margin-top: 10px;
+    }
 }
 
-.menu:before {
-  content: "[";
-}
+@media (max-width:779px) {
+    html, body {
+        
+    }
+    #body-replacement {
+        background-color: #666666;
+        font-family: "Roboto", Arial, sans-serif;
+    }
+    #login-div, #forgot-div, #reset-, #register-container{
+        position: absolute;
+        background: rgba(255,255,255,0.9);
+        left: 15px; right: 0; top: 2em;
+        width: 330px;
+        box-shadow: 0 0 6px 0 rgba(0,0,0,0.5);
+        border-radius:15px;
+    }
 
-.menu:after {
-  content: "]";
-}
+    #login-div, #register-container {
+        min-height: 500px;
+    }
 
-.menu > li {
-  display: inline;
-}
+    #forgot-div, #reset-div {
+        min-height: 375px;
+    }
 
-.menu > li:before {
-  content: "|";
-  padding-right: 0.3em;
-}
+    #login-div #login-form, #forgot-div #forgot-form, #reset-div #forgot-form, #register-container #register-form{
+        position: absolute;
+        top:0; bottom: 0; left: 0; right: 0;
+        height: 70%;
+        margin: auto 0;
+        padding:0 30px;
+    }
 
-.menu > li:nth-child(1):before {
-  content: "";
-  padding: 0;
+    #register-form {
+        margin-top: 10%;
+    }
+
+    #createAccount {
+        width:100%;
+        margin-top: 10px;
+    }
+
+    h2 {
+        font-family: "Raleway", Arial, sans-serif;
+        font-weight: 200;
+        font-size: 1.7em;
+        margin-bottom: 20px;
+        margin-top: 0;
+    }
+    input[type=submit] {
+        border-radius: 2px;
+        font-family: "Roboto", Arial, sans-serif;
+        font-size: 1.2em;
+        width: 100%;
+        height: 45px;
+        margin-top: 10px;
+        border: 1px solid, #1c78b1 (0.11,0.471,0.694);
+        background: #2e8ec9;
+        background: -moz-linear-gradient(bottom, #2789c7 0%, #3f9fd9 100%);
+        background: -webkit-gradient(linear, left bottom, left top, color-stop(0%,#2789c7), color-stop(100%,#3f9fd9));
+        background: -webkit-linear-gradient(bottom, #2789c7 0%,#3f9fd9 100%);
+        background: -o-linear-gradient(bottom, #2789c7 0%,#3f9fd9 100%);
+        background: -ms-linear-gradient(bottom, #2789c7 0%,#3f9fd9 100%);
+        background: linear-gradient(bottom, #2789c7 0%, #3f9fd9 100%) bottom (0.153,0.537,0.78) to top(0.247,0.624,0.851)filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f9fd9', endColorstr='#2789c7',GradientType=0 );
+    }
+    input[type=submit]:hover {
+        cursor: pointer;
+        box-shadow: inset 0px 2px 1px rgba(0,0,0,0.1);
+    }
+    .login-options, .post-login-options {
+        margin-top: 20px;
+        text-align:center;
+    }
+    .login-options {
+        font-size: 15px;
+    }
+    #register-container-div {
+        position: absolute;
+        left: 200px; right: 0;
+        top: 0; bottom: 0;
+        display:none;
+    }
+    #register-container-div #register-container {
+        position: absolute;
+        left: 0; right: 0; top: 6em;
+        width: 50%;
+        min-height: 400px;
+        margin: auto auto;
+        background: #fff;
+        box-shadow: 0 0 12px 0 rgba(0,0,0,0.8);
+    }
+    #register-container-div #register-container .register-form {
+        padding: 30px 25px;
+    }
+    form .form-group {
+        margin-bottom: 5px;
+        margin-top:5px;
+    }
+    input.form-control {
+        border-radius: 2px;
+        height: 50px;
+    }
+    #register-container-div #register-container .register-form input.form-control {
+        height: 40px;
+    }
+    .form-control-feedback {
+        height: 40px;
+        line-height: 40px;
+    }
+    #overlay {
+        position: absolute;
+        background: url(../img/loading.gif) no-repeat center center #000000;
+        top: 0; left: 0; right: 0; bottom: 0;
+        z-index: 9;
+        opacity: 0.5;
+    }
+
+    .resetSections {
+        position: absolute;
+        left: 0; right: 0; top: 6em;
+        width: 50%;
+        min-height: 200px;
+        margin: auto auto;
+        background: #fff;
+        box-shadow: 0 0 12px 0 rgba(0,0,0,0.8);
+    }
+
+    .formSections {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 15px;
+    }
+
+    .resetHeaders {
+        font-family: 'Raleway';
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    #insertInvoice .form-group .row {
+        margin:15px;
+    }
+
+    .avatarHeader {
+        max-height:48px;
+        padding:7px;
+    }
 }

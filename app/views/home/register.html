@@ -1,0 +1,45 @@
+<div id="overlay" ng-show="registerActionPerformed"></div>
+<script>
+    $('html').css("background-color", "#666666");
+    $('#login-div').css("display", "none");
+    $('#register-container').css("display", "block");
+</script>
+<div id="register-container" class="register-form">
+    <div class="status" style="color:red;display:none;" id="registerValidation">All fields must be completed.</div>
+	<div id="register-form">
+		<form novalidate name="registerForm" role="form" >
+            <div style="">
+             <button type="button" class="close" onclick="location.href='/'" aria-hidden="true" style="float:right;vertical-align:bottom;">&times;</button>
+             <img src="img/pixeltagLogo.png" style="margin-bottom:15px;max-width:80%;">
+               
+            </div>
+
+	        <div class="form-group" ng-class="{'has-error has-feedback': registerForm.first.$dirty && registerForm.first.$invalid, 'has-success has-feedback': registerForm.first.$valid}">
+	        	<label for="first" class="sr-only">First Name</label>
+	            <input type="text" class="form-control" id="" name="first" placeholder="First Name" ng-model="userdetails.first" required>
+	            <span class="glyphicon glyphicon-ok form-control-feedback" ng-show="registerForm.first.$valid"></span>
+	            <span class="glyphicon glyphicon-remove form-control-feedback" ng-show="registerForm.first.$dirty && registerForm.first.$invalid"></span>
+	        </div>
+	        <div class="form-group" ng-class="{'has-error has-feedback': registerForm.last.$dirty && registerForm.last.$invalid, 'has-success has-feedback': registerForm.last.$valid}">
+	        	<label for="last" class="sr-only">Last Name</label>
+	            <input type="text" class="form-control" id="" name="last" placeholder="Last Name" ng-model="userdetails.last" required>
+	            <span class="glyphicon glyphicon-ok form-control-feedback" ng-show="registerForm.last.$valid"></span>
+	            <span class="glyphicon glyphicon-remove form-control-feedback" ng-show="registerForm.last.$dirty && registerForm.last.$invalid"></span>
+	        </div>
+	        <div class="form-group" ng-class="{'has-error has-feedback': registerForm.email.$dirty && registerForm.email.$invalid, 'has-success has-feedback': registerForm.email.$valid}">
+	        	<label for="email" class="sr-only">E-mail Address</label>
+	            <input type="email" class="form-control" id="" name="email" placeholder="E-mail Address" ng-model="userdetails.email" required>
+	            <span class="glyphicon glyphicon-ok form-control-feedback" ng-show="registerForm.email.$valid"></span>
+	            <span class="glyphicon glyphicon-remove form-control-feedback" ng-show="registerForm.email.$dirty && registerForm.email.$invalid"></span>
+	        </div>
+	        <div class="form-group" ng-class="{'has-error has-feedback': registerForm.pass.$dirty && registerForm.pass.$invalid, 'has-success has-feedback': registerForm.pass.$valid}">
+	        	<label for="pass" class="sr-only">Password</label>
+	            <input type="password" class="form-control" id="" name="pass" placeholder="Password" ng-model="userdetails.pass" required>
+	            <span class="glyphicon glyphicon-ok form-control-feedback" ng-show="registerForm.pass.$valid"></span>
+	            <span class="glyphicon glyphicon-remove form-control-feedback" ng-show="registerForm.pass.$dirty && registerForm.pass.$invalid"></span>
+	        </div>
+	        
+	        <input type="button" class="btn btn-primary" value="Create Account" ng-click="doRegister()" id="createAccount">
+	    </form>
+	</div>
+</div>

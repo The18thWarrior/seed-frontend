@@ -1,0 +1,35 @@
+<div id="body-replacement">
+    <script>
+        function enterloading() {
+            $('#login-btn').prop('disabled', true);
+            //$('#login-btn').html('<img src="img/loading2.gif" style="max-width:50px;text-align:center;padding-top:10px;" />');
+
+        }
+        $('html').css("background-color", "#666666");
+        $('#login-div').css("display", "block");
+        $('#forgot-holder').css("display", "none");
+        
+    </script>
+    <div >
+        <div id="login-div">
+            <div id="login-form">
+                <form method="GET" role="form">
+                    <img src="img/pixeltagLogo.png" style="margin-bottom:15px;">
+                    <p ng-show="loginError" style="color:red;">Email or Password Not Recognized</p>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="" placeholder="Username" ng-model="pxl_username">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="" placeholder="Password" ng-model="pxl_password">
+                    </div>
+                    <input type="submit" class="btn btn-primary" value="Login" ng-click="doLogin()" onclick="enterloading()" id="login-btn"></input>
+                    <div class="post-login-options"><label for="remember_details"><input type="checkbox" name="remember_details"/> Remember username</label></div>
+                    <div class="login-options"><a ui-sref="users.forgot">Reset your password</a> | <a ui-sref="users.register">Register</a></div> 
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="forgot-holder">
+        <div ui-view></div>
+    </div>
+</div>

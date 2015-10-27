@@ -1,0 +1,31 @@
+<!--div id="title-div" ng-show="loggedIn">
+    <div class="logo"><a ui-sref="dashboard" ng-click="back();" ><img src="https://www.getpixeltag.com/images/pixeltagLogoGrey-transparent.png" style="height:80px;" alt="Pixel Tag" /> Campaign Manager</a></div>
+</div-->
+
+<div id="user-div" ng-show="loggedIn">
+    <div class="user-information">
+        <div class="menu">
+            <div class="btn-group">
+                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                    <img src="{{pagesAccount.avatar_url}}" class="avatarHeader"/> <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-right" role="menu" style="background-color: #fffffd;">
+                    <li><a ui-sref="account">Account</a></li>
+                    <li><a ng-click="logout()">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="campaign-menu">
+        <div class="user">
+            <a ui-sref="account" style="text-decoration: none !important;color: #666666;"><img src="img/smallLogo.png" style="height:40px;" alt="Pixel Tag" class="visible-sm-* visible-xs-*"/> Blockchain</a>
+        </div>
+    </div>
+</div>
+<div ui-view="pageView" ng-show="loggedIn"></div>
+<div ng-show="!loggedIn" style="width:100%;"><img src="img/loading2.gif" style="max-width:60px;margin-top:150px;margin-left:auto;margin-right:auto;display:block;"></div>
+
+
+<script>
+    $('html').css("background-color", "transparent");
+</script>

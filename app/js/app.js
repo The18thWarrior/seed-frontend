@@ -1,16 +1,61 @@
 'use strict';
 
-
-// Declare app level module which depends on filters, and services
-angular.module('myApp', [
-  'ngRoute',
-  'myApp.filters',
-  'myApp.services',
-  'myApp.directives',
-  'myApp.controllers'
+angular.module('app', [
+	'ui.router',
+	'app.loginControllers',
+	'app.fullControllers',
+	'app.services',
+	'app.directives'
 ]).
-config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/view1', {templateUrl: 'partials/partial1.html', controller: 'MyCtrl1'});
-  $routeProvider.when('/view2', {templateUrl: 'partials/partial2.html', controller: 'MyCtrl2'});
-  $routeProvider.otherwise({redirectTo: '/view1'});
-}]);
+config(function($stateProvider, $urlRouterProvider) {
+    
+    $urlRouterProvider.otherwise('/users');
+    
+    $stateProvider
+    .state('users', {
+        url: '/users',
+        templateUrl: '../views/home/login.html',
+        controller: 'loginController',
+        data: {
+         title: 'Blockchain App'
+        }     
+    })
+    .state('users.register', {
+      url: '/register',
+      templateUrl: '../views/home/register.html',
+      controller: 'registerController',
+      data: {
+       title: 'Blockchain App Register'
+      }
+    })
+    .state('users.forgot', {
+      url: '/forgot',
+      templateUrl: '../views/home/forgot.html',
+      controller: 'forgotController',
+      data: {
+       title: 'Blockchain App Password Reset'
+      }
+    })
+    .state('users.reset', {
+      url: '/reset/:id',
+      templateUrl: '../views/home/reset.html',
+      controller: 'resetController',
+      data: {
+       title: 'Blockchain App Password Reset'
+      }
+    })
+    .state('account', {
+      url: '/account/:id',
+      views: {
+        '': {
+          templateUrl: '../views/dashboard/header.html',
+          controller: 'pagesController'
+        },
+
+        'pageView@account': { 
+            templateUrl: '../views/dashboard/account.html',
+            controller: 'accountController'
+        }
+      }
+    });
+});

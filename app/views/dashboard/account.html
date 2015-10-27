@@ -1,0 +1,96 @@
+<div id="campaign-container-div">
+    <div class="detail-view fullscreen">
+        <div class="campaign-detail">
+            <div class="row">
+                <div class="col-md-12" align="right">
+                    <img src="{{account.avatar_url}}" class="avatarAccount"/>
+                    <div class="btn-group accountbuttons">
+                      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Edit <span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu dropdown-menu-right">
+                        <li><a ng-click="editAccountModal()"><i class="glyphicon glyphicon-pencil"></i> Edit Account</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a data-toggle="collapse" data-target="#passwordChange"><i class="glyphicon glyphicon-warning-sign"></i> Change Password</a></li>
+                      </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-8 row col-sm-12">
+                    <div class="col-md-12 collapse" id="passwordChange">
+                        <div class="col-md-12" id="passwordError"><p class="text-danger">Password did not match</p></div>
+                        <div class="col-md-4">
+                            <input type="password" ng-model="passwordchange" placeholder="New Password"  class="form-control"/>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="password" ng-model="passwordvalidator" placeholder="Re-enter Password" class="form-control" />
+                        </div>
+                        <div class="col-md-4">
+                            <button class="btn btn-danger" ng-click="changePassword();" id="savepass">Change Password</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <h3 class="detail-title">Contact Information</h3>
+                    <p>{{ account.first + " " + account.last }}</p>
+                    <p>{{ account.email }}</p>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Edit account modal -->
+<div class="modal fade" id="edit-account">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="cancelUpdate();">&times;</button>
+                <h4 class="modal-title">Edit Account</h4>
+            </div>
+            <form novalidate method="POST" role="form" name="editAccountForm" ng-submit="doAccountUpdate()" class="form-horizontal">
+                <div class="modal-body">
+                    <div class="modal-content-div row" style="text-align:left">
+                        <div class="alert alert-danger col-md-12" ng-hide="editAccountForm.$valid">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                            <strong>Invalid Input</strong> One of your form fields is not valid
+                        </div>
+
+                        <div class="form-group col-md-6" ng-class="{'has-error': editAccountForm.first.$dirty && editAccountForm.first.$invalid, 'has-success': editAccountForm.first.$valid}">
+                            <label for="first" class="col-sm-3 control-label">First</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="" placeholder="First Name" name="first" ng-model="editAccount.first" required>
+                            </div>
+                        </div>                         
+
+                        <div class="form-group col-md-6" ng-class="{'has-error': editAccountForm.last.$dirty && editAccountForm.last.$invalid, 'has-success': editAccountForm.last.$valid}">
+                            <label for="last" class="col-sm-3 control-label">Last</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="" placeholder="Last Name" name="last" ng-model="editAccount.last" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-6" ng-class="{'has-error': editAccountForm.email.$dirty && editAccountForm.email.$invalid, 'has-success': editAccountForm.email.$valid}">
+                            <label for="email" class="col-sm-3 control-label">E-mail</label>
+                            <div class="col-sm-9">
+                                <input type="email" class="form-control" id="" placeholder="E-mail" name="email" ng-model="editAccount.email" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-12" ng-class="{'has-error': editAccountForm.adNotes.$dirty && editAccountForm.adNotes.$invalid, 'has-success': editAccountForm.adNotes.$valid}">
+                            <label for="adNotes" class="col-sm-2 control-label" style="width: 89.6563px;">Notes</label>
+                            <div class="col-sm-9">
+                                <input type="textarea" class="form-control" id="" placeholder="Notes" name="adNotes" ng-model="editAccount.adNotes" rows="4" columns"50">
+                            </div>
+                        </div>   
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="cancelUpdate();">Cancel</button>
+                    <button type="submit" class="btn btn-primary" ng-disabled="!editAccountForm.$valid">Save Changes</button>
+                </div>
+            </form>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
